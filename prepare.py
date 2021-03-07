@@ -1,5 +1,8 @@
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
+
+
 
 def clean_telco(df):
     '''
@@ -8,8 +11,9 @@ def clean_telco(df):
 
     return: a single pandas dataframe with the above operations performed
     '''
-    df.monthly_charges.apply(lambda x: float(x))
-    df.total_charges.apply(lambda x: float(x))
+    df.total_charges.replace(to_replace=' ',value=np.nan,inplace=True)
+    df['total_charges'] = df.total_charges.astype(float).fillna(df.monthly_charges)
+        
     
     df.drop(columns=['payment_type_id', 'internet_service_type_id',
                      'contract_type_id'], inplace=True)
@@ -62,6 +66,14 @@ def clean_telco(df):
                             'contract_type',
                             'internet_service_type',
                             'payment_type',
+                            'online_security_No',
+                            'online_backup_No',
+                            'device_protection_No',
+                            'tech_support_No',
+                            'streaming_tv_No',
+                            'streaming_movies_No',
+                            'multiple_lines_No',
+                            
                             ], inplace=True)
 
     return encode_df
