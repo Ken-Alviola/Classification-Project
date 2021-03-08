@@ -44,13 +44,12 @@ def clean_telco(df):
                             'streaming_tv_No internet service',
                             'streaming_movies_No internet service',
                             'multiple_lines_No phone service',
-                            'internet_service_type_None',
+                           
                             ], inplace=True)
 
     encode_df = pd.concat([df, dummy_df, dummy_df2], axis=1)
 
     encode_df.drop(columns=['gender',
-                            'senior_citizen',
                             'partner',
                             'dependents',
                             'phone_service',
@@ -72,9 +71,37 @@ def clean_telco(df):
                             'tech_support_No',
                             'streaming_tv_No',
                             'streaming_movies_No',
-                            'multiple_lines_No',
-                            
+                            'multiple_lines_No',                            
                             ], inplace=True)
+    
+    encode_df.columns = ['customer_id',
+                 'senior_citizen',
+                 'tenure',
+                 'monthly_charges',
+                 'total_charges',
+                 'gender_Male',
+                 'partner',
+                 'dependents',
+                 'phone_service',
+                 'paperless_billing',
+                 'churn',
+                 'online_security',
+                 'online_backup',
+                 'device_protection',
+                 'tech_support',
+                 'streaming_tv',
+                 'streaming_movies',
+                 'multiple_lines',
+                 'Month_to_month',
+                 'One_year_contract',
+                 'Two_year_contract',
+                 'DSL',
+                 'Fiber_optic',
+                 'No_internet',
+                 'Bank_transfer_(automatic)',
+                 'Credit_card_(automatic)',
+                 'Electronic_check',
+                 'Mailed_check']
 
     return encode_df
 
