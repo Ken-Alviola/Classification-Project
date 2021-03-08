@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-
-
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import classification_report
 
 def clean_telco(df):
     '''
@@ -120,3 +121,26 @@ def generic_split(df, stratify_by=None):
     
     return train, validate, test
 
+def get_metrics(model, X, y):
+    '''
+    get_metrics_bin will take in a sklearn classifier model, an X and a y variable and utilize
+    the model to make a prediction and then gather accuracy, class report evaluations
+
+    return:  a classification report as a pandas DataFrame
+    '''
+    y_pred = model.predict(X)
+    accuracy = model.score(X, y)
+    conf = confusion_matrix(y, y_pred)
+    print('confusion matrix: ', conf)
+    print()
+    class_report = pd.DataFrame(classification_report(y, y_pred, output_dict=True)).T
+    tpr = conf[1][1] / conf[1].sum()
+    fpr = conf[0][1] / conf[0].sum()
+    tnr = conf[0][0] / conf[0].sum()
+    fnr = conf[1][0] / conf[1].sum()
+    print(f'''
+    The accuracy for our model is {accuracy:.4}
+    The True Positive Rate is {tpr:.3}, The False Positive Rate is {fpr:.3},
+    The True Negative Rate is {tnr:.3}, and the False Negative Rate is {fnr:.3}
+    ''')
+    return class_report
