@@ -102,7 +102,7 @@ def clean_telco(df):
                  'Credit_card_(automatic)',
                  'Electronic_check',
                  'Mailed_check']
-
+    
     return encode_df
 
 def generic_split(df, stratify_by=None):
