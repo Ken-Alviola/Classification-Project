@@ -42,10 +42,24 @@
 |churn|1 if customer has left service| int |
 
 ### Hypotheses
-1. Are the monthly charges between churned customers significantly higher from unchurned customers?
-- **null_hypothesis = "The means of monthly_charges are the same for churn vs. no churn**
-- **alternative_hypothesis = "Churned customers had higher monthly_charges than unchurned**
-2. Is Churn independent of the Fiber Optic service?
-- **null_hypothesis = "Churn is independent of the Fiber Optic service**"
-- **alternative_hypothesis = "Churn depends on Fiber Optic service subscription**"
+**1. Are the monthly charges between churned customers significantly higher from unchurned customers?**
+- null_hypothesis = "The means of monthly_charges are the same for churn vs. no churn
+- alternative_hypothesis = "Churned customers had higher monthly_charges than unchurned
+**2. Is Churn independent of the Fiber Optic service?**
+- null_hypothesis = "Churn is independent of the Fiber Optic service"
+- alternative_hypothesis = "Churn depends on Fiber Optic service subscription"
+**3. Is there a correlation between monthly charges and tenure for churned fiber optic customers?**
+- null_hypothesis = "There is no correlation between monthly charges and tenure for churned fiber optic customers"
+- alternative_hypothesis = "There is a positive correlation between monthly charges and tenure for churned fiber optic customers"
 
+### Project Plan
+1. Acquire telco data from telco_churn database using correct joins
+2. Prepare data by removing unnecessary/redundant columns, dealing with nulls, and encoding variables for use with ML models
+3. Explore data using functions in explore.py
+4. Create ML models and choose best performing for test data
+5. Create churn predictions and probabilities for each customer and store in .csv file
+
+### How to re-create
+- All necessary files are in this repository so the best method would be to git clone
+- Run Classification_Project_Telco.ipynb
+- Adjust exploration and modeling to your liking
