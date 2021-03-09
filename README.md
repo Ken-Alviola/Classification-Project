@@ -40,3 +40,10 @@
 | Target | Definition | Data Type |
 | ----- | ----- | ----- |
 |churn|1 if customer has left service| int |
+
+### Hypotheses
+-Are the monthly charges between churned customers significantly higher from unchurned customers?
+'''
+null_hypothesis = "The means of monthly_charges are the same for churn vs. no churn"
+alternative_hypothesis = "Churned customers had higher monthly_charges than unchurned"
+'''
