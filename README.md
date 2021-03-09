@@ -45,9 +45,11 @@
 **1. Are the monthly charges between churned customers significantly higher from unchurned customers?**
 - null_hypothesis = "The means of monthly_charges are the same for churn vs. no churn
 - alternative_hypothesis = "Churned customers had higher monthly_charges than unchurned
+
 **2. Is Churn independent of the Fiber Optic service?**
 - null_hypothesis = "Churn is independent of the Fiber Optic service"
 - alternative_hypothesis = "Churn depends on Fiber Optic service subscription"
+
 **3. Is there a correlation between monthly charges and tenure for churned fiber optic customers?**
 - null_hypothesis = "There is no correlation between monthly charges and tenure for churned fiber optic customers"
 - alternative_hypothesis = "There is a positive correlation between monthly charges and tenure for churned fiber optic customers"
