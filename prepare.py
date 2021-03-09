@@ -131,7 +131,7 @@ def get_metrics(model, X, y):
     y_pred = model.predict(X)
     accuracy = model.score(X, y)
     conf = confusion_matrix(y, y_pred)
-    print('confusion matrix: ', conf)
+    print('confusion matrix: \n', conf)
     print()
     class_report = pd.DataFrame(classification_report(y, y_pred, output_dict=True)).T
     tpr = conf[1][1] / conf[1].sum()
