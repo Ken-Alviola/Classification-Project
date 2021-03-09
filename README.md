@@ -62,6 +62,6 @@
 5. Create churn predictions and probabilities for each customer and store in .csv file
 
 ### How to re-create
-- All necessary files are in this repository so the best method would be to git clone
+- All necessary files minus env.py are in this repository so the best method would be to git clone and add your own env.py
 - Run Classification_Project_Telco.ipynb
 - Adjust exploration and modeling to your liking
