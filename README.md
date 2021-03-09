@@ -1,7 +1,7 @@
 # Classification-Project
 
 ### Description and Goals
-- Project examining driverss of customer churn using the telco_churn database from Codeup
+- Project examining drivers of customer churn using the telco_churn database from Codeup
 - The goals are to find drivers of churn and to accurately predict churn using a machine learning model
 
 ### Data Dictionary
