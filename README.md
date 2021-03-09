@@ -43,8 +43,8 @@
 
 ### Hypotheses
 **1. Are the monthly charges between churned customers significantly higher from unchurned customers?**
-- null_hypothesis = "The means of monthly_charges are the same for churn vs. no churn
-- alternative_hypothesis = "Churned customers had higher monthly_charges than unchurned
+- null_hypothesis = "The means of monthly_charges are the same for churn vs. no churn"
+- alternative_hypothesis = "Churned customers had higher monthly_charges than unchurned"
 
 **2. Is Churn independent of the Fiber Optic service?**
 - null_hypothesis = "Churn is independent of the Fiber Optic service"
